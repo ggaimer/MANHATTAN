@@ -1,0 +1,17 @@
+@mixin link($width, $height, $padding) {
+    width: $width;
+    height: $height;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    border-radius: 5px;
+    border: 2px solid $orange;
+    background-color: transparent;
+
+    padding: $padding;
+}
