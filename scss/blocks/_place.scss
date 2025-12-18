@@ -1,0 +1,125 @@
+.place {
+    margin-bottom: 100px;
+
+    &__subtitle-wrapper {
+        width: 250px;
+
+        margin: 0 auto 40px;
+
+        @media (max-width: 767px) {
+            margin: 0 auto 20px;
+        }
+    }
+
+    &__title {
+        font-family: $font-gotham-pro;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        margin-bottom: 20px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 13px;
+        }
+    }
+
+    &__text {
+        max-width: 316px;
+
+        margin-bottom: 35px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+
+        &-wrapper {
+            display: flex;
+            column-gap: 5px;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 35px;
+
+                @media (max-width: 480px) {
+                    margin-bottom: 22px;
+                }
+            }
+        }
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__content {
+        width: 416px;
+        height: 656px;
+
+        border-radius: 5px;
+        border: 2px solid #d5621d;
+        background-color: rgba(213, 98, 29, 0.1);
+
+        padding: 50px;
+
+        @media (max-width: 767px) {
+            width: 100%;
+            height: auto;
+
+            padding: 30px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 20px;
+        }
+    }
+
+    &__content>.place__link:first-of-type {
+        margin-bottom: 35px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 22px;
+        }
+    }
+
+    &__schedule {
+        width: 316px;
+
+        border-bottom: 1px solid $border-color;
+
+        margin-bottom: 45px;
+        padding-bottom: 45px;
+
+        @media (max-width: 480px) {
+            width: 100%;
+
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+    }
+
+    &__image {
+        border-radius: 5px;
+        border: 2px solid $orange;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 1310px) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 25px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 60px;
+    }
+}

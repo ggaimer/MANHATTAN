@@ -36,3 +36,22 @@ const swiper = new Swiper('.swiper', {
         },
     }
 })
+
+
+// accordion
+
+const accordions = document.querySelectorAll('.party__accordion');
+
+accordions.forEach(accordion => {
+    const accordionTop = accordion.querySelector('.party__accordion-top');
+
+    accordionTop.addEventListener('click', () => {
+        accordions.forEach(item => {
+            if (item !== accordion) {
+                item.classList.remove('party__accordion--open');
+            }
+        });
+
+        accordion.classList.toggle('party__accordion--open');
+    });
+});

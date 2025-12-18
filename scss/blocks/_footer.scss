@@ -1,0 +1,27 @@
+.footer {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-top: 1px solid $border-color;
+
+        padding-block: 30px;
+
+        @media (max-width: 510px) {
+            flex-direction: column;
+            row-gap: 10px;
+
+            padding: 20px;
+        }
+    }
+
+    &__copyright,
+    &__text {
+        opacity: 0.5;
+
+        @media (max-width: 510px) {
+            text-align: center;
+        }
+    }
+}

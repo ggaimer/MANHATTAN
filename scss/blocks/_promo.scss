@@ -1,0 +1,48 @@
+.promo {
+    &__subtitle-wrapper {
+        width: 261px;
+
+        padding: 9px 20px 7px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 35px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+        line-height: 150%;
+        text-align: center;
+
+        width: 100%;
+
+        margin-bottom: 35px;
+    }
+
+    &__link {
+        @include link(156px, 51px, 15px 30px);
+    }
+
+    &__wrapper {
+        max-width: 376px;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &-image {
+        border-radius: 5px;
+    }
+}
+
+.tourists-subtitle-wrapper {
+    width: 277px;
+}

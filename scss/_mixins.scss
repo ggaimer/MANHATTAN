@@ -14,4 +14,8 @@
     background-color: transparent;
 
     padding: $padding;
+
+    &:hover {
+        background-color: $orange;
+    }
 }

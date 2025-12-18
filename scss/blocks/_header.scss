@@ -20,10 +20,6 @@
         &-reservation {
             @include link(188px, 51px, 15 30);
 
-            &:hover {
-                background-color: $orange;
-            }
-
             @media (max-width: 767px) {
                 display: none;
             }
