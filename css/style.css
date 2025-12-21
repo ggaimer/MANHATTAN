@@ -381,13 +381,19 @@ body {
   background-color: transparent;
   padding: 15 30;
 }
-.header__link-reservation:hover {
+.header__link-reservation:hover:not(.header__link--active) {
   background-color: #d5621d;
 }
 @media (max-width: 767px) {
   .header__link-reservation {
     display: none;
   }
+}
+.header__link--active {
+  cursor: default;
+}
+.header__link--active {
+  color: #d5621d;
 }
 .header__link:hover {
   color: #d5621d;
@@ -772,7 +778,7 @@ body {
   background-color: transparent;
   padding: 15px 30px;
 }
-.promo__link:hover {
+.promo__link:hover:not(.header__link--active) {
   background-color: #d5621d;
 }
 .promo__wrapper {
@@ -874,9 +880,7 @@ body {
 .party__accordion--open .party__accordion-content {
   max-height: 415px;
   animation: accrodionAnswerAnimation 400ms ease-in-out;
-}
-.party__accordion--open .party__accordion-top {
-  margin-bottom: 20px;
+  padding-top: 20px;
 }
 .party__accordion--open .party__accordion-top img {
   transform: rotate(180deg);
@@ -949,7 +953,7 @@ body {
   background-color: transparent;
   padding: 10px;
 }
-.party__soundengineer-socials__link:hover {
+.party__soundengineer-socials__link:hover:not(.header__link--active) {
   background-color: #d5621d;
 }
 @media (max-width: 767px) {
@@ -1127,6 +1131,160 @@ body {
 @media (max-width: 510px) {
   .footer__copyright, .footer__text {
     text-align: center;
+  }
+}
+
+.poster {
+  margin-bottom: 150px;
+}
+.poster__item {
+  position: relative;
+  height: 350px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 35px;
+  padding-bottom: 32px;
+}
+.poster__item:first-child, .poster__item:nth-child(4), .poster__item:nth-child(5), .poster__item:nth-child(10) {
+  background-image: url("../../assets/images/poster/poster-bg-1.jpg");
+}
+.poster__item:nth-child(2), .poster__item:nth-child(7), .poster__item:last-child {
+  background-image: url("../../assets/images/poster/poster-bg-2.jpg");
+}
+.poster__item:nth-child(3), .poster__item:nth-child(8), .poster__item:nth-child(9) {
+  background-image: url("../../assets/images/poster/poster-bg-3.jpg");
+}
+.poster__item:nth-child(6), .poster__item:nth-child(11) {
+  background-image: url("../../assets/images/poster/poster-bg-4.jpg");
+}
+.poster__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .poster__item:hover::before {
+    background-color: rgba(33, 14, 9, 0.9);
+  }
+  .poster__item:hover .poster__content {
+    transform: translateY(0%);
+  }
+}
+.poster__item > * {
+  z-index: 2;
+  position: relative;
+}
+@media (min-width: 320px) and (max-width: 1023.98px) {
+  .poster__item {
+    padding-inline: 0px;
+    padding-bottom: 0px;
+  }
+  .poster__item::before {
+    display: none;
+  }
+  .poster__item:active::before {
+    background-color: rgba(33, 14, 9, 0.9);
+  }
+}
+.poster__content {
+  display: flex;
+  row-gap: 15px;
+  flex-direction: column;
+  transform: translateY(130%);
+  transition: transform 0.3s ease;
+}
+@media (min-width: 320px) and (max-width: 1023.98px) {
+  .poster__content {
+    transform: translateY(0%);
+    background-color: rgba(33, 14, 9, 0.9);
+    padding: 16px 18px;
+  }
+}
+.poster__date, .poster__time {
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.poster__date {
+  position: relative;
+}
+.poster__date::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #fff;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(12px);
+}
+.poster__info {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  width: 174px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #d5621d;
+  padding: 8px 15px;
+}
+.poster__title {
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.poster__price {
+  width: 88px;
+  height: 38px;
+  border-radius: 5px;
+  border: 2px solid #d5621d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 20px 10px;
+}
+.poster__list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1160px) {
+  .poster__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 870px) {
+  .poster__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 660px) {
+  .poster__list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .poster {
+    margin-bottom: 60px;
   }
 }
 

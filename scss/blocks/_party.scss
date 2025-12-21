@@ -38,7 +38,7 @@
 
         border-radius: 5px;
         background-color: rgba(213, 98, 29, 0.1);
-
+        
         padding: 20px 40px;
         margin-bottom: 20px;
 
@@ -98,11 +98,10 @@
         &--open .party__accordion-content {
             max-height: 415px;
             animation: accrodionAnswerAnimation 400ms ease-in-out;
+            padding-top: 20px;
         }
 
         &--open .party__accordion-top {
-            margin-bottom: 20px;
-
             & img {
                 transform: rotate(180deg);
             }

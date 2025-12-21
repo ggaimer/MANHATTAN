@@ -15,7 +15,7 @@
 
     padding: $padding;
 
-    &:hover {
+    &:hover:not(.header__link--active) {
         background-color: $orange;
     }
 }

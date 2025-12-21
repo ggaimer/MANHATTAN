@@ -1,0 +1,202 @@
+.poster {
+    margin-bottom: 150px;
+
+    &__item {
+        position: relative;
+        height: 350px;
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background-color 0.3s ease;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-inline: 35px;
+        padding-bottom: 32px;
+
+        // Фоновые изображения
+        &:first-child,
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(10) {
+            background-image: url("../../assets/images/poster/poster-bg-1.jpg");
+        }
+
+        &:nth-child(2),
+        &:nth-child(7),
+        &:last-child {
+            background-image: url("../../assets/images/poster/poster-bg-2.jpg");
+        }
+
+        &:nth-child(3),
+        &:nth-child(8),
+        &:nth-child(9) {
+            background-image: url("../../assets/images/poster/poster-bg-3.jpg");
+        }
+
+        &:nth-child(6),
+        &:nth-child(11) {
+            background-image: url("../../assets/images/poster/poster-bg-4.jpg");
+        }
+
+        // Псевдоэлемент затемнения
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+
+        // Ховер для затемнения
+        @media (min-width: 1024px) {
+            &:hover::before {
+                background-color: rgba(33, 14, 9, 0.9);
+            }
+
+            // Если нужно анимировать .poster__content
+            &:hover {
+                .poster__content {
+                    transform: translateY(0%);
+                }
+            }
+        }
+
+        // Если .poster__content нужно анимировать всегда при ховере
+        // но только на десктопе, вынесите это отдельно:
+        // &:hover .poster__content {
+        //     @media (min-width: 1024px) {
+        //         transform: translateY(0%);
+        //     }
+        // }
+
+        &>* {
+            z-index: 2;
+            position: relative;
+        }
+
+        @media (min-width: 320px) and (max-width: 1023.98px) {
+            padding-inline: 0px;
+            padding-bottom: 0px;
+
+            // Отключаем ховер-эффекты на планшетах и мобильных
+            &::before {
+                display: none; // или оставить без изменений
+            }
+
+            // Если нужно, добавьте active-состояние для тач-устройств
+            &:active::before {
+                background-color: rgba(33, 14, 9, 0.9);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        row-gap: 15px;
+        flex-direction: column;
+        transform: translateY(130%);
+
+        transition: transform 0.3s ease;
+
+        @media (min-width: 320px) and (max-width: 1023.98px) {
+            transform: translateY(0%);
+
+            background-color: rgba(33, 14, 9, 0.9);
+
+            padding: 16px 18px;
+        }
+    }
+
+    &__date,
+    &__time {
+        font-family: $font-gotham-pro;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    &__date {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 5px;
+            background-color: #fff;
+
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) translateX(12px);
+        }
+    }
+
+    &__info {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+
+        width: 174px;
+        height: 35px;
+
+        border-radius: 5px;
+        background-color: $orange;
+
+        padding: 8px 15px;
+    }
+
+    &__title {
+        font-family: $font-gotham-pro;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    &__price {
+        width: 88px;
+        height: 38px;
+
+        border-radius: 5px;
+        border: 2px solid $orange;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: $font-gotham-pro;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        padding: 10px 20px 10px;
+    }
+
+    &__list {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: 1160px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 870px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 660px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 60px;
+    }
+}

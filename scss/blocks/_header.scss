@@ -25,6 +25,14 @@
             }
         }
 
+        &--active {
+            cursor: default;
+        }
+
+        &--active {
+            color: $orange;
+        }
+
         &:hover {
             color: $orange;
         }
