@@ -21,24 +21,24 @@
         &:nth-child(4),
         &:nth-child(5),
         &:nth-child(10) {
-            background-image: url("../../assets/images/poster/poster-bg-1.jpg");
+            background-image: url("../assets/images/poster/poster-bg-1.jpg");
         }
 
         &:nth-child(2),
         &:nth-child(7),
         &:last-child {
-            background-image: url("../../assets/images/poster/poster-bg-2.jpg");
+            background-image: url("../assets/images/poster/poster-bg-2.jpg");
         }
 
         &:nth-child(3),
         &:nth-child(8),
         &:nth-child(9) {
-            background-image: url("../../assets/images/poster/poster-bg-3.jpg");
+            background-image: url("../assets/images/poster/poster-bg-3.jpg");
         }
 
         &:nth-child(6),
         &:nth-child(11) {
-            background-image: url("../../assets/images/poster/poster-bg-4.jpg");
+            background-image: url("../assets/images/poster/poster-bg-4.jpg");
         }
 
         // Псевдоэлемент затемнения
