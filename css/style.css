@@ -506,7 +506,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background-image: url("../../assets/images/hero/hero-bg.jpg");
+  background-image: url("../assets/images/hero/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -799,7 +799,7 @@ body {
   margin-bottom: 150px;
 }
 .party__subtitle-wrapper {
-  width: 251px;
+  width: 261px;
   margin: 0 auto 40px;
 }
 @media (max-width: 767px) {
@@ -1153,16 +1153,16 @@ body {
   padding-bottom: 32px;
 }
 .poster__item:first-child, .poster__item:nth-child(4), .poster__item:nth-child(5), .poster__item:nth-child(10) {
-  background-image: url("../../assets/images/poster/poster-bg-1.jpg");
+  background-image: url("../assets/images/poster/poster-bg-1.jpg");
 }
 .poster__item:nth-child(2), .poster__item:nth-child(7), .poster__item:last-child {
-  background-image: url("../../assets/images/poster/poster-bg-2.jpg");
+  background-image: url("../assets/images/poster/poster-bg-2.jpg");
 }
 .poster__item:nth-child(3), .poster__item:nth-child(8), .poster__item:nth-child(9) {
-  background-image: url("../../assets/images/poster/poster-bg-3.jpg");
+  background-image: url("../assets/images/poster/poster-bg-3.jpg");
 }
 .poster__item:nth-child(6), .poster__item:nth-child(11) {
-  background-image: url("../../assets/images/poster/poster-bg-4.jpg");
+  background-image: url("../assets/images/poster/poster-bg-4.jpg");
 }
 .poster__item::before {
   content: "";
@@ -1285,6 +1285,145 @@ body {
 @media (max-width: 767px) {
   .poster {
     margin-bottom: 60px;
+  }
+}
+
+.events__title {
+  margin-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .events__title {
+    margin-bottom: 70px;
+  }
+}
+.events__subtitle-wrapper {
+  width: 261px;
+  margin: 0 auto 40px;
+}
+.events__section-title {
+  font-family: "Gotham Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .events__section-title {
+    margin-bottom: 45px;
+  }
+}
+.events__corporate-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 816px;
+  margin: 0 auto 100px;
+}
+@media (max-width: 830px) {
+  .events__corporate-list {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 781px) {
+  .events__corporate-list {
+    justify-content: center;
+    row-gap: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .events__corporate-list {
+    margin: 0 auto 35px;
+  }
+}
+.events__corporate-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 190px;
+}
+.events__corporate-image {
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .events__corporate-image {
+    margin-bottom: 25px;
+  }
+}
+.events__corporate-text {
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  max-width: 376px;
+  margin-top: auto;
+}
+@media (max-width: 767px) {
+  .events__corporate-text {
+    font-size: 16px;
+    margin-top: inherit;
+  }
+}
+.events__why-us__title {
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .events__why-us__title {
+    margin-bottom: 35px;
+  }
+}
+.events__why-us__text {
+  font-size: 18px;
+  line-height: 150%;
+  width: 607px;
+}
+@media (max-width: 767px) {
+  .events__why-us__text {
+    font-size: 15px;
+  }
+}
+@media (max-width: 650px) {
+  .events__why-us__text {
+    width: 100%;
+  }
+}
+.events__why-us__item {
+  padding-left: 30px;
+  position: relative;
+}
+.events__why-us__item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #d5621d;
+  margin-right: 20px;
+  top: 10px;
+  left: 0;
+}
+.events__why-us__item:not(:last-child) {
+  margin-bottom: 22px;
+}
+@media (max-width: 767px) {
+  .events__why-us__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.events__why-us__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+}
+@media (max-width: 767px) {
+  .events__why-us__list {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 650px) {
+  .events__why-us__list {
+    align-items: start;
   }
 }
 
