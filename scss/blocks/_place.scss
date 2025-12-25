@@ -1,10 +1,6 @@
 .place {
     margin-bottom: 100px;
 
-    &__subtitle-wrapper {
-        
-    }
-
     &__title {
         font-family: $font-gotham-pro;
         font-size: 18px;
@@ -17,7 +13,7 @@
         @media (max-width: 480px) {
             font-size: 16px;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
     }
 

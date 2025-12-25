@@ -69,6 +69,10 @@
         font-weight: 700;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+
+        @media (max-width: 480px) {
+            font-size: 12px;
+        }
     }
 
     &__date {
@@ -101,6 +105,13 @@
         background-color: $orange;
 
         padding: 8px 15px;
+
+        @media (max-width: 480px) {
+            width: max-content;
+            height: 30px;
+
+            padding: 5px 10px;
+        }
     }
 
     &__title {
@@ -109,6 +120,10 @@
         font-size: 18px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+
+        @media (max-width: 480px) {
+            font-size: 16px;
+        }
     }
 
     &__price {
@@ -128,6 +143,15 @@
         text-transform: uppercase;
 
         padding: 10px 20px 10px;
+
+        @media (max-width: 480px) {
+            width: max-content;
+            height: 33px;
+            
+            font-size: 12px;
+
+            padding: 8px 13px 10px;
+        }
     }
 
     @media (max-width: 767px) {
