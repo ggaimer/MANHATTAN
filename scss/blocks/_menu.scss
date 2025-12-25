@@ -1,15 +1,5 @@
 .menu {
-    margin-bottom: 150px;
-
-    &__subtitle-wrapper {
-        width: 245px;
-
-        margin: 0 auto 40px;
-
-        @media (max-width: 767px) {
-            margin: 0 auto 20px;
-        }
-    }
+    margin-bottom: $section-bottom;
 
     &__title {
         font-family: $font-gotham-pro;
@@ -42,7 +32,7 @@
         max-width: 486px;
         width: 100%;
         height: 111px;
-        
+
         display: flex;
         justify-content: space-between;
 
@@ -100,9 +90,7 @@
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 56px 104px;
+        @include grid(2, 56px 104px);
 
         max-width: 1076px;
         width: 100%;
@@ -115,7 +103,7 @@
             justify-items: center;
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 767px) {
             margin: 0 auto 50px;
         }
     }
@@ -127,7 +115,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         border-radius: 5px;
         border: 1px solid $orange;
         background-color: $orange;
@@ -155,6 +143,6 @@
     }
 
     @media (max-width: 767px) {
-        margin-bottom: 90px;
+        margin-bottom: $section-bottom-mobile;
     }
 }

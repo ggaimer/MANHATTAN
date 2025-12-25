@@ -4,8 +4,8 @@
 @import "variables";
 @import 'fonts';
 @import 'reset';
-@import 'core';
 @import 'mixins';
+@import 'core';
 
 
 // blocks
@@ -18,3 +18,4 @@
 @import 'blocks/footer';
 @import 'blocks/poster';
 @import 'blocks/events';
+@import 'blocks/gallery';

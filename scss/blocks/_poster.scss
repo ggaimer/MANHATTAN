@@ -1,22 +1,11 @@
 .poster {
-    margin-bottom: 150px;
+    margin-bottom: $section-bottom;
 
     &__item {
-        position: relative;
-        height: 350px;
-        display: flex;
-        justify-content: end;
-        flex-direction: column;
-        cursor: pointer;
-        overflow: hidden;
-        transition: background-color 0.3s ease;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        padding-inline: 35px;
-        padding-bottom: 32px;
+        justify-content: flex-end;
 
-        // Фоновые изображения
+        padding: 0 35px 32px 35px;
+
         &:first-child,
         &:nth-child(4),
         &:nth-child(5),
@@ -41,56 +30,19 @@
             background-image: url("../assets/images/poster/poster-bg-4.jpg");
         }
 
-        // Псевдоэлемент затемнения
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-            z-index: 1;
-        }
-
-        // Ховер для затемнения
-        @media (min-width: 1024px) {
-            &:hover::before {
-                background-color: rgba(33, 14, 9, 0.9);
-            }
-
-            // Если нужно анимировать .poster__content
-            &:hover {
-                .poster__content {
-                    transform: translateY(0%);
-                }
-            }
-        }
-
-        // Если .poster__content нужно анимировать всегда при ховере
-        // но только на десктопе, вынесите это отдельно:
-        // &:hover .poster__content {
-        //     @media (min-width: 1024px) {
-        //         transform: translateY(0%);
-        //     }
-        // }
-
         &>* {
             z-index: 2;
             position: relative;
         }
 
+        @media (hover: hover) and (pointer: fine) {
+            &:hover .poster__content {
+                transform: translateY(0%);
+            }
+        }
+
         @media (min-width: 320px) and (max-width: 1023.98px) {
-            padding-inline: 0px;
-            padding-bottom: 0px;
-
-            // Отключаем ховер-эффекты на планшетах и мобильных
-            &::before {
-                display: none; // или оставить без изменений
-            }
-
-            // Если нужно, добавьте active-состояние для тач-устройств
-            &:active::before {
-                background-color: rgba(33, 14, 9, 0.9);
-            }
+            padding: 0;
         }
     }
 
@@ -178,25 +130,7 @@
         padding: 10px 20px 10px;
     }
 
-    &__list {
-        display: grid;
-        gap: 24px;
-        grid-template-columns: repeat(4, 1fr);
-
-        @media (max-width: 1160px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media (max-width: 870px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @media (max-width: 660px) {
-            grid-template-columns: 1fr;
-        }
-    }
-
     @media (max-width: 767px) {
-        margin-bottom: 60px;
+        margin-bottom: $section-bottom-mobile;
     }
 }

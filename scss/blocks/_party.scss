@@ -1,15 +1,5 @@
 .party {
-    margin-bottom: 150px;
-
-    &__subtitle-wrapper {
-        width: 261px;
-
-        margin: 0 auto 40px;
-
-        @media (max-width: 767px) {
-            margin: 0 auto 20px;
-        }
-    }
+    margin-bottom: $section-bottom;
 
     &__title {
         font-family: $font-gotham-pro;
@@ -38,7 +28,7 @@
 
         border-radius: 5px;
         background-color: rgba(213, 98, 29, 0.1);
-        
+
         padding: 20px 40px;
         margin-bottom: 20px;
 
@@ -200,7 +190,7 @@
     }
 
     @media (max-width: 767px) {
-        margin-bottom: 60px;
+        margin-bottom: $section-bottom-mobile;
     }
 }
 

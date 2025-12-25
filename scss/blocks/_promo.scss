@@ -1,14 +1,4 @@
 .promo {
-    &__subtitle-wrapper {
-        width: 261px;
-
-        padding: 9px 20px 7px;
-
-        @media (max-width: 767px) {
-            margin-bottom: 15px;
-        }
-    }
-
     &__title {
         margin-bottom: 35px;
 
@@ -22,8 +12,10 @@
         text-align: center;
 
         width: 100%;
-
-        margin-bottom: 35px;
+        
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
     }
 
     &__link {
@@ -44,5 +36,4 @@
 }
 
 .tourists-subtitle-wrapper {
-    width: 277px;
 }

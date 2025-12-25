@@ -13,107 +13,85 @@ burgerClose.addEventListener("click", () => {
     body.classList.remove('stop-scroll')
 })
 
+headerWrapperMobile.addEventListener('click', (e) => {
+    const link = e.target.closest('a')
+    if (!link) return
 
-// swiper
+    const href = link.getAttribute('href')
 
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1,
+    // проверка на якорную ссылку
+    if (href && href.startsWith('#')) {
+        e.preventDefault()
 
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+        // закрываем меню
+        headerWrapperMobile.classList.remove('active')
+        body.classList.remove('stop-scroll')
 
-    breakpoints: {
-        320: {
-            slidesPerView: 1.1,
-            spaceBetween: 16,
-        },
-
-        768: {
-            slidesPerView: 1,
-        },
+        // плавный скролл
+        const target = document.querySelector(href)
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }
     }
 })
 
 
+// swiper
+
+const swiperEl = document.querySelector('.swiper')
+
+if (swiperEl) {
+    const swiper = new Swiper(swiperEl, {
+        loop: true,
+        slidesPerView: 1,
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+            320: {
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+            },
+
+            768: {
+                slidesPerView: 1,
+            },
+        }
+    })
+}
+
+
 // accordion
 
-// let slideUp = (target, duration = 300) => {
-// 	target.style.transitionProperty = 'height, margin, padding'
-// 	target.style.transitionDuration = duration + 'ms'
-// 	target.style.boxSizing = 'border-box'
-// 	target.style.height = target.offsetHeight + 'px'
-// 	target.offsetHeight
-// 	target.style.overflow = 'hidden'
-// 	target.style.height = 0
-// 	target.style.paddingTop = 0
-// 	target.style.paddingBottom = 0
-// 	target.style.marginTop = 0
-// 	target.style.marginBottom = 0
-// 	target.style.border = 'none'
-
-// 	window.setTimeout(() => {
-// 		target.style.display = 'none'
-// 		target.style.removeProperty('height')
-// 		target.style.removeProperty('padding-top')
-// 		target.style.removeProperty('padding-bottom')
-// 		target.style.removeProperty('margin-top')
-// 		target.style.removeProperty('margin-bottom')
-// 		target.style.removeProperty('overflow')
-// 		target.style.removeProperty('transition-duration')
-// 		target.style.removeProperty('transition-property')
-// 		target.style.removeProperty('border')
-// 	}, duration)
-// }
-// /* SLIDE DOWN */
-// let slideDown = (target, duration = 300) => {
-// 	target.style.removeProperty('display')
-// 	let display = window.getComputedStyle(target).display
-// 	if (display === 'none') display = 'grid'
-// 	target.style.display = display
-// 	let height = target.offsetHeight
-// 	target.style.overflow = 'hidden'
-// 	target.style.height = 0
-// 	target.style.paddingTop = 0
-// 	target.style.paddingBottom = 0
-// 	target.style.marginTop = 0
-// 	target.style.marginBottom = 0
-// 	target.offsetHeight
-// 	target.style.boxSizing = 'border-box'
-// 	target.style.transitionProperty = 'height, margin, padding'
-// 	target.style.transitionDuration = duration + 'ms'
-// 	target.style.height = height + 'px'
-// 	target.style.border = 'none'
-
-// 	target.style.removeProperty('padding-top')
-// 	target.style.removeProperty('padding-bottom')
-// 	target.style.removeProperty('margin-top')
-// 	target.style.removeProperty('margin-bottom')
-// 	target.style.removeProperty('border')
-
-// 	window.setTimeout(() => {
-// 		target.style.removeProperty('height')
-// 		target.style.removeProperty('overflow')
-// 		target.style.removeProperty('transition-duration')
-// 		target.style.removeProperty('transition-property')
-// 		target.style.removeProperty('border')
-// 	}, duration)
-// }
-
-const accordions = document.querySelectorAll('.party__accordion');
+const accordions = document.querySelectorAll('.party__accordion')
 
 accordions.forEach(accordion => {
-    const accordionTop = accordion.querySelector('.party__accordion-top');
+    const accordionTop = accordion.querySelector('.party__accordion-top')
 
     accordionTop.addEventListener('click', () => {
         accordions.forEach(item => {
             if (item !== accordion) {
-                item.classList.remove('party__accordion--open');
+                item.classList.remove('party__accordion--open')
             } else {
-                accordion.classList.toggle('party__accordion--open');
+                accordion.classList.toggle('party__accordion--open')
             }
-        });
-    });
-});
+        })
+    })
+})
+
+
+// Fancybox
+
+Fancybox.bind("[data-fancybox]", {
+    Carousel: {
+        Thumbs: {
+            type: "modern",
+        },
+    },
+})

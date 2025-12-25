@@ -2,13 +2,7 @@
     margin-bottom: 100px;
 
     &__subtitle-wrapper {
-        width: 250px;
-
-        margin: 0 auto 40px;
-
-        @media (max-width: 767px) {
-            margin: 0 auto 20px;
-        }
+        
     }
 
     &__title {
@@ -21,7 +15,9 @@
         margin-bottom: 20px;
 
         @media (max-width: 480px) {
-            margin-bottom: 13px;
+            font-size: 16px;
+
+            margin-bottom: 10px;
         }
     }
 
@@ -31,7 +27,9 @@
         margin-bottom: 35px;
 
         @media (max-width: 480px) {
-            margin-bottom: 25px;
+            font-size: 12px;
+
+            margin-bottom: 15px;
         }
     }
 
@@ -54,6 +52,13 @@
 
         &:hover {
             color: $orange;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 12px;
+            &-text {
+                font-size: 12px;
+            }
         }
     }
 
@@ -98,6 +103,8 @@
         @media (max-width: 480px) {
             width: 100%;
 
+            font-size: 12px;
+
             margin-bottom: 25px;
             padding-bottom: 25px;
         }
@@ -120,6 +127,6 @@
     }
 
     @media (max-width: 767px) {
-        margin-bottom: 60px;
+        margin-bottom: $section-bottom-mobile;
     }
 }
